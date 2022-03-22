@@ -1,32 +1,38 @@
 package it.unibo.radarSystem22.domain.mock;
 
-import it.unibo.radarSystem22.domain.interfaces.IDistance;
 import it.unibo.radarSystem22.domain.interfaces.ISonar;
+import it.unibo.radarSystem22.domain.model.Distance;
+import it.unibo.radarSystem22.domain.model.SonarModel;
+import it.unibo.radarSystem22.domain.utils.BasicUtils;
+import it.unibo.radarSystem22.domain.utils.DomainSystemConfig;
 
-public class SonarMock implements ISonar{
+public class SonarMock extends SonarModel implements ISonar {
+
+	// Un Mock-sonar che produce valori di distanza da 90 a 0
+
+	private int delta = 1;
 
 	@Override
-	public void activate() {
-		// TODO Auto-generated method stub
-		
+	protected void sonarSetUp() {
+		currentDistance = new Distance(90);
 	}
 
 	@Override
-	public void deactivate() {
-		// TODO Auto-generated method stub
-		
-	}
+	protected void sonarProduce() {
+		// fase testing, il sonar produce UN UNICO dato NOTO
+		if (DomainSystemConfig.testing) {
+			updateDistance(DomainSystemConfig.testingDistance);
+			stopped = true;
+		} else {
+			// fase simulazione, il sonar produce valori da 90 a 0, poi si stoppa
 
-	@Override
-	public IDistance getDistance() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+			updateDistance(currentDistance.getVal() - delta);
+			if (getDistance().getVal() <= 0)
+				stopped = true;
 
-	@Override
-	public boolean isActive() {
-		// TODO Auto-generated method stub
-		return false;
+			BasicUtils.delay(DomainSystemConfig.sonarDelay); // tempo di attesa tra due produzioni consecutive
+		}
+
 	}
 
 }

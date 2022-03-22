@@ -8,7 +8,7 @@ import org.junit.*;
 import it.unibo.radarSystem22.domain.interfaces.ILed;
 import it.unibo.radarSystem22.domain.mock.LedMock;
 
-public class TestLed {
+public class TestLedMock {
 	
 	@BeforeClass
 	public static void beforeClass() {

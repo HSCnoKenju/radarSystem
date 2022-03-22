@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import it.unibo.radarSystem22.domain.interfaces.ILed;
 import it.unibo.radarSystem22.domain.model.LedModel;
+import it.unibo.radarSystem22.domain.utils.ColorsOut;
 
 public class LedConcrete extends LedModel implements ILed {
 
@@ -20,7 +21,8 @@ public class LedConcrete extends LedModel implements ILed {
 			else
 				r.exec("sudo bash led25Gpio6Off.sh");
 		} catch (IOException e) {
-			System.err.println("LedConcrete | ERROR " + e.getMessage());
+			ColorsOut.outerr("LedConcrete | ERROR " + e.getMessage());
+//			System.err.println("LedConcrete | ERROR " + e.getMessage());
 		}
 	}
 
