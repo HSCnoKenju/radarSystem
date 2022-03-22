@@ -1,32 +1,18 @@
 package it.unibo.radarSystem22.domain.mock;
 
 import it.unibo.radarSystem22.domain.interfaces.ILed;
+import it.unibo.radarSystem22.domain.model.LedModel;
+import it.unibo.radarSystem22.domain.utils.ColorsOut;
 
-public class LedMock implements ILed{
-	
-	private boolean state; 
-
-	
-	
-	public LedMock() {
-		super();
-		this.state = false;
-	}
+public class LedMock extends LedModel implements ILed {
 
 	@Override
-	public void turnOn() {
-		this.state = true;
-		
+	protected void ledActivate(boolean value) {
+		showState();
 	}
 
-	@Override
-	public void turnOff() {
-		this.state = false;
-	}
-
-	@Override
-	public boolean getState() {
-		return this.state;
+	protected void showState() {
+		ColorsOut.outappl("LedMock state=" + getState(), ColorsOut.MAGENTA);
 	}
 
 }

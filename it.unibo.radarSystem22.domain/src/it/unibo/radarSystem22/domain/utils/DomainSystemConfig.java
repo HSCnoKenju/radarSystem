@@ -28,14 +28,14 @@ public class DomainSystemConfig {
 	}
 
 	public static void setTheConfiguration(String resourceName) {
-		// Nella distribuzione resourceName � in una dir che include la bin
+		// Nella distribuzione resourceName è in una directory che include la bin
 		FileInputStream fis = null;
 		try {
 			ColorsOut.out("%%% setTheConfiguration from file:" + resourceName);
 			if (fis == null) {
 				fis = new FileInputStream(new File(resourceName));
 			}
-
+			//JSONTokener richiede un Reader, quindi faccio il wrapper
 			InputStreamReader isr = new InputStreamReader(fis);
 
 			JSONTokener tokener = new JSONTokener(isr);
