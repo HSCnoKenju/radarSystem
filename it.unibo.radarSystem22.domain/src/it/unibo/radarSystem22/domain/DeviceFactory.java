@@ -1,5 +1,6 @@
 package it.unibo.radarSystem22.domain;
 
+import it.unibo.radarSystem22.domain.concrete.RadarDisplayConcrete;
 //import it.unibo.radarSystem22.domain.concrete.RadarDisplay;
 import it.unibo.radarSystem22.domain.interfaces.*;
 import it.unibo.radarSystem22.domain.model.LedModel;
@@ -44,8 +45,8 @@ public class DeviceFactory {
 //	}
 	
 	//We do not have mock for RadarGui
-//	public static IRadarDisplay createRadarGui() {
-//		return RadarDisplay.getRadarDisplay();
-//	}
+	public static IRadarDisplay createRadarGui() {
+		return RadarDisplayConcrete.getRadarDisplay();
+	}
 	
 }
