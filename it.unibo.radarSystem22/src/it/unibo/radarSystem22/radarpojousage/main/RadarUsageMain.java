@@ -1,4 +1,4 @@
-package it.unibo.radarSystem22.main;
+package it.unibo.radarSystem22.radarpojousage.main;
 
 import it.unibo.radar.common.radarSupport;
 
@@ -10,9 +10,7 @@ public class RadarUsageMain {
 		radarSupport.update( "40", "60");
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
             new RadarUsageMain().doJob();
     }
-		
 
 }

@@ -7,3 +7,4 @@ bin
 *.class
 *.project
 *.classpath
+settings.json
