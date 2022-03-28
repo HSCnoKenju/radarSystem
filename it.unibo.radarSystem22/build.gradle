@@ -47,7 +47,7 @@ eclipse {
     }
 }
 
-mainClassName = 'it.unibo.xxx'  //TODO
+mainClassName = 'it.unibo.radarSystem22.sprint1.RadarSystemSprint1Main'
 
 jar {
     from sourceSets.main.allSource
@@ -58,7 +58,8 @@ jar {
 distributions {
     main {
         contents {
-            from './RadarSystemConfig.json'
+            from './DomainSystemConfig.json'
+         	from './RadarSystemConfig.json'
         }
     }
 }

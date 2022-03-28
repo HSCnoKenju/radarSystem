@@ -93,10 +93,10 @@ public class RadarSystemSprint1Main implements IApplication {
 	}
 
 	public static void main(String[] args) throws Exception {
-		BasicUtils.aboutThreads("At INIT with NO CONFIG files| ");
-		new RadarSystemSprint1Main().doJob(null, null);
-//		BasicUtils.aboutThreads("At INIT with  CONFIG files| ");
-//		new RadarSystemSprint1Main().doJob("DomainSystemConfig.json","RadarSystemConfig.json");
+//		BasicUtils.aboutThreads("At INIT with NO CONFIG files| ");
+//		new RadarSystemSprint1Main().doJob(null, null);
+		BasicUtils.aboutThreads("At INIT with  CONFIG files| ");
+		new RadarSystemSprint1Main().doJob("DomainSystemConfig.json", "RadarSystemConfig.json");
 		/*
 		 * //su Rasp: new RadarSystemSprint1Main().doJob(
 		 * "DomainSystemConfig.json","RadarSystemSprint1Main");
