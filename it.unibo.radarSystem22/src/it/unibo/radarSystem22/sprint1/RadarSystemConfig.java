@@ -16,6 +16,8 @@ public class RadarSystemConfig {
 	public static boolean testing = false;
 	public static int DLIMIT = 70;
 	public static boolean RadarGuiRemote = false;
+	public static int serverPort;
+	public static String hostAddr;
 
 	public static void setTheConfiguration() {
 		setTheConfiguration("../RadarSystemConfig.json");
@@ -41,6 +43,8 @@ public class RadarSystemConfig {
 			testing = object.getBoolean("testing");
 			RadarGuiRemote = object.getBoolean("RadarGuiRemote");
 			DLIMIT = object.getInt("DLIMIT");
+			serverPort = object.getInt("serverPort");
+			hostAddr = object.getString("hostAddr");
 
 		} catch (FileNotFoundException | JSONException e) {
 			ColorsOut.outerr("setTheConfiguration ERROR " + e.getMessage());
