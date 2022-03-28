@@ -49,7 +49,7 @@ protected ProtocolType protocol ;
 			}
 			case mqtt : {
 				//La connessione col Broker viene stabilita in fase di configurazione
-				//La entry è quella definita per ricevere risposte;
+				//La entry Ã¨ quella definita per ricevere risposte;
 				//ColorsOut.out(name+"  | ProxyAsClient connect MQTT entry=" + entry );
 				//conn = MqttConnection.getSupport();					
  				break;
