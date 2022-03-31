@@ -49,7 +49,7 @@ public class RadarSysSprint2ControllerOnRaspMain implements IApplication{
 	    	DomainSystemConfig.ledGui      = true;			
 	    	
 			RadarSystemConfig.RadarGuiRemote    = true;		
-			RadarSystemConfig.serverPort        = 8080;		
+			RadarSystemConfig.serverPort        = 8099;		
 			RadarSystemConfig.hostAddr          = "localhost";
 	    	RadarSystemConfig.DLIMIT            = 75;
 		}

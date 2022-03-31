@@ -25,7 +25,6 @@ public class SonarMock extends SonarModel implements ISonar {
 			stopped = true;
 		} else {
 			// fase simulazione, il sonar produce valori da 90 a 0, poi si stoppa
-
 			updateDistance(currentDistance.getVal() - delta);
 			if (getDistance().getVal() <= 0)
 				stopped = true;
