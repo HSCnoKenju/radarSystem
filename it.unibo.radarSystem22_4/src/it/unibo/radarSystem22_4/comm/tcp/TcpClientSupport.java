@@ -1,9 +1,9 @@
 package it.unibo.radarSystem22_4.comm.tcp;
 
-import java.net.Socket;
-
 import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
 import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
+
+import java.net.Socket;
 
 public class TcpClientSupport {
 //	private Socket socket;

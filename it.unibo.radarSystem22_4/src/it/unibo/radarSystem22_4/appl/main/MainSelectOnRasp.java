@@ -1,11 +1,11 @@
 package it.unibo.radarSystem22_4.appl.main;
 
+import it.unibo.radarSystem22_4.comm.interfaces.IApplication;
+import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-
-import it.unibo.radarSystem22_4.comm.interfaces.IApplication;
-import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
 
 public class MainSelectOnRasp {
     public HashMap<String, IApplication> programs = new HashMap<String, IApplication>();

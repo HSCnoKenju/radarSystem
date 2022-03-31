@@ -1,13 +1,13 @@
 package it.unibo.radarSystem22_4.comm.udp;
 
 
+import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
-
-import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
 
 
 public class UdpServerConnection extends UdpConnection {

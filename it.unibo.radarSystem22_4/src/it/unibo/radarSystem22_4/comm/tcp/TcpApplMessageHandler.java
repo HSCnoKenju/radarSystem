@@ -21,7 +21,7 @@ public class TcpApplMessageHandler extends Thread {
 
     @Override
     public void run() {
-        String name = handler.getName();
+        String name = this.getClass().getName() + " | " + handler.getName();
         try {
             ColorsOut.out("TcpApplMessageHandler | STARTS with handler=" + name + " conn=" + conn, ColorsOut.BLUE);
             while (true) {

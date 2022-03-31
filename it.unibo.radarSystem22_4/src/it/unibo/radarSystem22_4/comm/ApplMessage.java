@@ -17,6 +17,7 @@ public class ApplMessage implements IApplMessage {
     protected Interaction2021 conn; // not null for request
 
     public ApplMessage(String MSGID, String MSGTYPE, String SENDER, String RECEIVER, String CONTENT, String SEQNUM) {
+
         msgId = MSGID;
         msgType = MSGTYPE;
         msgSender = SENDER;

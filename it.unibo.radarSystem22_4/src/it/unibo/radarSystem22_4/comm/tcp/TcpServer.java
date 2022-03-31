@@ -1,12 +1,12 @@
 package it.unibo.radarSystem22_4.comm.tcp;
 
-import java.net.ServerSocket;
-import java.net.Socket;
-
 import it.unibo.radarSystem22_4.comm.interfaces.IApplMsgHandler;
 import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
 import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
 import it.unibo.radarSystem22_4.comm.utils.CommSystemConfig;
+
+import java.net.ServerSocket;
+import java.net.Socket;
 
 
 public class TcpServer extends Thread {
@@ -34,7 +34,7 @@ public class TcpServer extends Thread {
             ColorsOut.outappl(getName() + " | STARTING ... ", ColorsOut.BLUE);
             while (!stopped) {
                 //Accept a connection
-                //ColorsOut.out(getName() + " | waits on server port=" + port + " serversock=" + serversock );
+                ColorsOut.out(getName() + " | waits on server " + "serversock=" + serversock);
                 Socket sock = serversock.accept();
                 ColorsOut.out(getName() + " | accepted connection  ", ColorsOut.BLUE);
                 Interaction2021 conn = new TcpConnection(sock);

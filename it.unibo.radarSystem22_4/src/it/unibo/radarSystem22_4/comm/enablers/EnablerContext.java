@@ -1,6 +1,7 @@
 package it.unibo.radarSystem22_4.comm.enablers;
 
 import it.unibo.radarSystem22_4.comm.ProtocolType;
+import it.unibo.radarSystem22_4.comm.context.ContextMsgHandler;
 import it.unibo.radarSystem22_4.comm.interfaces.IApplMsgHandler;
 import it.unibo.radarSystem22_4.comm.interfaces.IContext;
 import it.unibo.radarSystem22_4.comm.interfaces.IContextMsgHandler;
@@ -16,6 +17,10 @@ public class EnablerContext implements IContext {
     protected UdpServer serverUdp;
     protected boolean isactive = false;
 
+    public EnablerContext(String name, String port, ProtocolType protocol) {
+        this(name, port, protocol, new ContextMsgHandler("ctxH"));
+    }
+
     public EnablerContext(String name, String port, ProtocolType protocol, IContextMsgHandler handler) {
         try {
             this.name = name;
@@ -23,13 +28,15 @@ public class EnablerContext implements IContext {
             ctxMsgHandler = handler;
             if (protocol != null) {
                 setServerSupport(port, protocol, handler);
-            } else ColorsOut.out(name + " |  CREATED no protocol");
+            } else
+                ColorsOut.out(name + " |  CREATED no protocol");
         } catch (Exception e) {
             ColorsOut.outerr(name + " |  CREATE Error: " + e.getMessage());
         }
     }
 
-    protected void setServerSupport(String portStr, ProtocolType protocol, IContextMsgHandler handler) throws Exception {
+    protected void setServerSupport(String portStr, ProtocolType protocol, IContextMsgHandler handler)
+            throws Exception {
         if (protocol == ProtocolType.tcp) {
             int port = Integer.parseInt(portStr);
             serverTcp = new TcpServer("ctxTcp", port, handler);
@@ -38,7 +45,8 @@ public class EnablerContext implements IContext {
             int port = Integer.parseInt(portStr);
             serverUdp = new UdpServer("ctxUdp", port, handler);
         } else if (protocol == ProtocolType.coap) {
-            //CoapApplServer.getTheServer();	//Le risorse sono create alla configurazione del sistema
+            // CoapApplServer.getTheServer(); //Le risorse sono create alla configurazione
+            // del sistema
             ColorsOut.out(name + " |  CREATED  CoapApplServer");
         } else if (protocol == ProtocolType.mqtt) {
             ColorsOut.out(name + " |  Do nothing for mqtt");
@@ -83,7 +91,9 @@ public class EnablerContext implements IContext {
 
     @Override
     public void deactivate() {
-        //ColorsOut.out(name+" |  deactivate  "  );
+        // ColorsOut.out(name+" | deactivate " );
+        if (!isactive)
+            return;
         switch (protocol) {
             case tcp: {
                 serverTcp.deactivate();

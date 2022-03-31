@@ -1,10 +1,9 @@
 package it.unibo.radarSystem22_4.comm.udp;
 
+import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
+
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-
-import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
-import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
 
 
 public class UdpClientSupport {

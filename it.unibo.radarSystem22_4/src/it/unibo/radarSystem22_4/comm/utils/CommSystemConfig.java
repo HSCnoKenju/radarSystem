@@ -1,15 +1,10 @@
 package it.unibo.radarSystem22_4.comm.utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-
+import it.unibo.radarSystem22_4.comm.ProtocolType;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import it.unibo.radarSystem22_4.comm.ProtocolType;
+import java.io.*;
 
 
 public class CommSystemConfig {

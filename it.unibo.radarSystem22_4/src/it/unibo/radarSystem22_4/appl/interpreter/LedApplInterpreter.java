@@ -1,7 +1,6 @@
 package it.unibo.radarSystem22_4.appl.interpreter;
 
 import it.unibo.radarSystem22.domain.interfaces.ILed;
-import it.unibo.radarSystem22.domain.utils.ColorsOut;
 import it.unibo.radarSystem22_4.comm.interfaces.IApplInterpreter;
 import it.unibo.radarSystem22_4.comm.interfaces.IApplMessage;
 import it.unibo.radarSystem22_4.comm.utils.CommUtils;

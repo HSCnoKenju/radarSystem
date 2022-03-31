@@ -1,6 +1,6 @@
 package it.unibo.radarSystem22_4.appl.main;
 
-import it.unibo.radarSystem22.domain.interfaces.*;
+import it.unibo.radarSystem22.domain.interfaces.ILed;
 import it.unibo.radarSystem22_4.appl.RadarSystemConfig;
 import it.unibo.radarSystem22_4.appl.proxy.LedProxy;
 import it.unibo.radarSystem22_4.comm.ProtocolType;

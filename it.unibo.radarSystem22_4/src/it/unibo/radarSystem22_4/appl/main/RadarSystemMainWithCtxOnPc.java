@@ -1,7 +1,9 @@
 package it.unibo.radarSystem22_4.appl.main;
 
-import it.unibo.radarSystem22.domain.*;
-import it.unibo.radarSystem22.domain.interfaces.*;
+import it.unibo.radarSystem22.domain.DeviceFactory;
+import it.unibo.radarSystem22.domain.interfaces.ILed;
+import it.unibo.radarSystem22.domain.interfaces.IRadarDisplay;
+import it.unibo.radarSystem22.domain.interfaces.ISonar;
 import it.unibo.radarSystem22_4.appl.ActionFunction;
 import it.unibo.radarSystem22_4.appl.Controller;
 import it.unibo.radarSystem22_4.appl.RadarSystemConfig;
@@ -9,7 +11,6 @@ import it.unibo.radarSystem22_4.appl.proxy.LedProxy;
 import it.unibo.radarSystem22_4.appl.proxy.SonarProxy;
 import it.unibo.radarSystem22_4.comm.ProtocolType;
 import it.unibo.radarSystem22_4.comm.interfaces.IApplication;
-import it.unibo.radarSystem22_4.comm.utils.BasicUtils;
 import it.unibo.radarSystem22_4.comm.utils.CommSystemConfig;
 
 public class RadarSystemMainWithCtxOnPc implements IApplication {

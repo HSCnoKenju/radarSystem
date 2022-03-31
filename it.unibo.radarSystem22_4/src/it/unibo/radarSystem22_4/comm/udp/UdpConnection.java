@@ -1,13 +1,11 @@
 package it.unibo.radarSystem22_4.comm.udp;
 
+import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
+import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-
-import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
-import it.unibo.radarSystem22_4.comm.utils.BasicUtils;
-import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
-import it.unibo.radarSystem22_4.comm.utils.CommUtils;
 
 
 public class UdpConnection implements Interaction2021 {

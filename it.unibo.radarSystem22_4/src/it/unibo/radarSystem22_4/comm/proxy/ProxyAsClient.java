@@ -1,9 +1,9 @@
 package it.unibo.radarSystem22_4.comm.proxy;
 
 import it.unibo.radarSystem22_4.comm.ProtocolType;
-import it.unibo.radarSystem22_4.comm.tcp.*;
-import it.unibo.radarSystem22_4.comm.udp.*;
 import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
+import it.unibo.radarSystem22_4.comm.tcp.TcpClientSupport;
+import it.unibo.radarSystem22_4.comm.udp.UdpClientSupport;
 import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
 
 public class ProxyAsClient {

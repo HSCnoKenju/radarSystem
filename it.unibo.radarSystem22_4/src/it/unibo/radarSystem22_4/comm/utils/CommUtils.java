@@ -33,7 +33,7 @@ public class CommUtils {
         return result;
     }
 
-    public static IApplMessage buildDispatch(String sender, String msgId, String payload, String dest) {
+    public static synchronized IApplMessage buildDispatch(String sender, String msgId, String payload, String dest) {
         try {
             return new ApplMessage(msgId, ApplMessageType.dispatch.toString(), sender, dest, payload, "" + (msgNum++));
         } catch (Exception e) {
@@ -44,7 +44,9 @@ public class CommUtils {
 
     public static IApplMessage buildRequest(String sender, String msgId, String payload, String dest) {
         try {
-            return new ApplMessage(msgId, ApplMessageType.request.toString(), sender, dest, payload, "" + (msgNum++));
+            IApplMessage m = new ApplMessage(msgId, ApplMessageType.request.toString(), sender, dest, payload, "" + (msgNum++));
+            ColorsOut.out("Message | " + m, ColorsOut.MAGENTA);
+            return m;
         } catch (Exception e) {
             ColorsOut.outerr("buildRequest ERROR:" + e.getMessage());
             return null;

@@ -1,9 +1,10 @@
 package it.unibo.radarSystem22_4.appl.usecases;
 
 
+import it.unibo.radarSystem22.domain.interfaces.IDistance;
+import it.unibo.radarSystem22.domain.interfaces.ILed;
 import it.unibo.radarSystem22_4.appl.RadarSystemConfig;
 import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
-import it.unibo.radarSystem22.domain.interfaces.*;
 
 public class LedAlarmUsecase {
     public static void doUseCase(ILed led, IDistance d) {

@@ -1,15 +1,10 @@
 package it.unibo.radarSystem22_4.comm.tcp;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.Socket;
-
 import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
 import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
+
+import java.io.*;
+import java.net.Socket;
 
 
 public class TcpConnection implements Interaction2021 {

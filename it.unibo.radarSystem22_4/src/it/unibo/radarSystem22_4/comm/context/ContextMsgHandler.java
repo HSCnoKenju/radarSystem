@@ -1,14 +1,13 @@
 package it.unibo.radarSystem22_4.comm.context;
 
-import java.util.HashMap;
-
-
 import it.unibo.radarSystem22_4.comm.ApplMsgHandler;
 import it.unibo.radarSystem22_4.comm.interfaces.IApplMessage;
 import it.unibo.radarSystem22_4.comm.interfaces.IApplMsgHandler;
 import it.unibo.radarSystem22_4.comm.interfaces.IContextMsgHandler;
 import it.unibo.radarSystem22_4.comm.interfaces.Interaction2021;
 import it.unibo.radarSystem22_4.comm.utils.ColorsOut;
+
+import java.util.HashMap;
 
 /*
  * Il ContextMsgHandler viene invocato dal TcpContextServer (un singleton).
