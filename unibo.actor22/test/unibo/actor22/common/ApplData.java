@@ -8,26 +8,49 @@ import unibo.actor22comm.utils.ColorsOut;
 
 public class ApplData {
     public static final String ledName = "led";
+    public static final String sonarName = "sonar";
     public static final String controllerName = "controller";
     public static final String observerName = "observer";
 
+    // leds
     public static final String comdLedon = "turnOn";
     public static final String comdLedoff = "turnOff";
     public static final String reqLedState = "getState";
 
+    // controller
     public static final String cmdActivate = "activate";
     public static final String cmdDectivate = "deactivate";
 
     public static final String evEndWork = "endWork";
 
+
+    // sonar
+    public static final String cmdSonarActivate = "activate";
+    public static final String cmdSonarDeactivate = "deactivate";
+    public static final String reqSonarIsActive = "isActive";
+    public static final String reqSonarGetDistance = "getDistance";
+
+
+
     public static final int ctxPort = 8018;
     public static final ProtocolType protocol = ProtocolType.tcp;
     //String MSGID, String MSGTYPE, String SENDER, String RECEIVER, String CONTENT, String SEQNUM
     private static int msgNum = 0;
+
+    // led
     public static final IApplMessage turnOnLed = buildDispatch(controllerName, "cmd", comdLedon, ledName);
     public static final IApplMessage turnOffLed = buildDispatch(controllerName, "cmd", comdLedoff, ledName);
+
+    // controller
     public static final IApplMessage activateCrtl = buildDispatch("main", "cmd", cmdActivate, controllerName);
     public static final IApplMessage endWorkEvent = buildEvent(controllerName, evEndWork, evEndWork);
+
+
+    // sonar
+
+    public static final IApplMessage sonarActivate = buildDispatch(controllerName, "cmd", cmdSonarActivate, sonarName);
+    public static final IApplMessage sonarDeactivate = buildDispatch(controllerName, "cmd", cmdSonarDeactivate, sonarName);
+
 
     public static IApplMessage buildDispatch(String sender, String msgId, String payload, String dest) {
         try {
