@@ -10,6 +10,8 @@ public class ApplData {
     public static final String ledName = "led";
     public static final String sonarName = "sonar";
     public static final String controllerName = "controller";
+    public static final String radarName = "radar";
+
     public static final String observerName = "observer";
 
     // leds
@@ -31,6 +33,12 @@ public class ApplData {
     public static final String reqSonarGetDistance = "getDistance";
 
 
+    // radarDisplay
+
+    public static final String cmdDisplayUpdate = "update";
+    public static final String reqDisplayCurrent = "getCurrent";
+
+
 
     public static final int ctxPort = 8018;
     public static final ProtocolType protocol = ProtocolType.tcp;
@@ -50,6 +58,7 @@ public class ApplData {
 
     public static final IApplMessage sonarActivate = buildDispatch(controllerName, "cmd", cmdSonarActivate, sonarName);
     public static final IApplMessage sonarDeactivate = buildDispatch(controllerName, "cmd", cmdSonarDeactivate, sonarName);
+
 
 
     public static IApplMessage buildDispatch(String sender, String msgId, String payload, String dest) {

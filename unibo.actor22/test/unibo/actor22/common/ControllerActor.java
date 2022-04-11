@@ -40,7 +40,7 @@ public class ControllerActor extends QakActor22 {
         switch (msgCmd) {
             case ApplData.cmdActivate: {
                doControllerWorkLed();
-                doControllerWorkSonar();
+                //doControllerWorkSonar();
                 break;
             }
             default:
@@ -64,7 +64,7 @@ public class ControllerActor extends QakActor22 {
         CommUtils.aboutThreads(getName() + " |  Before doControllerWorkLed on=" + on);
         //wrongBehavior();
         ColorsOut.outappl( getName()  + " | numIterLed=" + numIterLed  , ColorsOut.GREEN);
-        if (numIterLed++ < 5) { // modifico l'iterazione ad ogni esecuzione
+        if (numIterLed++ < 3) { // modifico l'iterazione ad ogni esecuzione
             if (numIterLed % 2 == 1) forward(ApplData.turnOnLed); //accesione
             else forward(ApplData.turnOffLed); //spegnimento
             request(getStateRequest);
@@ -99,7 +99,7 @@ public class ControllerActor extends QakActor22 {
 
     protected void elabAnswer(IApplMessage msg) {
         ColorsOut.outappl(getName() + " | elabAnswer " + " " + msg, ColorsOut.MAGENTA);
-        CommUtils.delay(300);
+        CommUtils.delay(800);
 
         String sender = msg.msgSender();
         switch (sender){

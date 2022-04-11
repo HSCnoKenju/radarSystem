@@ -1,13 +1,14 @@
-package unibo.actor22.distrib;
+package unibo.main;
 
 
 import it.unibo.radarSystem22.domain.utils.DomainSystemConfig;
-import unibo.actor22.common.ApplData;
-import unibo.actor22.common.LedActor;
+import unibo.appl.ApplData;
+import unibo.appl.LedActor;
 import unibo.actor22comm.context.EnablerContextForActors;
 import unibo.actor22comm.utils.ColorsOut;
 import unibo.actor22comm.utils.CommSystemConfig;
 import unibo.actor22comm.utils.CommUtils;
+import unibo.appl.SonarActor;
 
 
 public class LedActorOnRasp {
@@ -36,6 +37,7 @@ public class LedActorOnRasp {
 
         ctx = new EnablerContextForActors("ctx", ApplData.ctxPort, ApplData.protocol);
         new LedActor(ApplData.ledName);
+        new SonarActor(ApplData.sonarName);
         //Registrazione dei componenti presso il contesto: NO MORE ...
     }
 

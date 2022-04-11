@@ -15,6 +15,7 @@ public class ControllerActor extends QakActor22 {
     protected IApplMessage getStateRequest;
     protected IApplMessage getSonarActiveRequest;
     protected IApplMessage getDistanceRequest;
+    protected IApplMessage cmdDisplayUpdate;
     protected boolean on = true;
 
     public ControllerActor(String name) {
@@ -22,7 +23,7 @@ public class ControllerActor extends QakActor22 {
         getStateRequest = ApplData.buildRequest(name, "ask", ApplData.reqLedState, ApplData.ledName);
         getSonarActiveRequest = ApplData.buildRequest(name, "ask", ApplData.reqSonarIsActive, ApplData.sonarName);
         getDistanceRequest = ApplData.buildRequest(name, "ask", ApplData.reqSonarGetDistance, ApplData.sonarName);
-
+        ApplData.buildDispatch(name,ApplData.cmdDisplayUpdate,"0",ApplData.radarName);
     }
 
     @Override
@@ -96,6 +97,12 @@ public class ControllerActor extends QakActor22 {
 
     }
 
+    protected void doControllerRadarWork(String value){
+        CommUtils.aboutThreads(getName() + " |  Before doControllerWorkRadar on=" + on);
+        cmdDisplayUpdate = ApplData.buildDispatch(getName(),ApplData.cmdDisplayUpdate,value,ApplData.radarName);
+        forward(cmdDisplayUpdate);
+    }
+
 
     protected void elabAnswer(IApplMessage msg) {
         ColorsOut.outappl(getName() + " | elabAnswer " + " " + msg, ColorsOut.MAGENTA);
@@ -109,6 +116,8 @@ public class ControllerActor extends QakActor22 {
                 break;
 
             case ApplData.sonarName:
+                if(msg.msgId().equals(ApplData.reqSonarGetDistance))
+                    doControllerRadarWork(msg.msgContent());
                 doControllerWorkSonar();
                 break;
 

@@ -1,15 +1,16 @@
-package unibo.actor22.distrib;
+package unibo.main;
 
 import it.unibo.kactor.IApplMessage;
 import it.unibo.radarSystem22.domain.utils.BasicUtils;
 import it.unibo.radarSystem22.domain.utils.DomainSystemConfig;
 import unibo.actor22.Qak22Context;
 import unibo.actor22.Qak22Util;
-import unibo.actor22.common.ApplData;
-import unibo.actor22.common.ControllerActor;
+import unibo.appl.ApplData;
+import unibo.appl.ControllerActor;
 import unibo.actor22comm.utils.ColorsOut;
 import unibo.actor22comm.utils.CommSystemConfig;
 import unibo.actor22comm.utils.CommUtils;
+import unibo.appl.RadarActor;
 
 
 
@@ -44,7 +45,10 @@ public class ControllerOnPcUsingLedRemote {
 
         Qak22Context.setActorAsRemote(
                 ApplData.ledName, "" + ApplData.ctxPort, raspHostAddr, ApplData.protocol);
+        Qak22Context.setActorAsRemote(
+                ApplData.sonarName, "" + ApplData.ctxPort, raspHostAddr, ApplData.protocol);
 
+        new RadarActor(ApplData.radarName);
         new ControllerActor(ApplData.controllerName);
     }
 

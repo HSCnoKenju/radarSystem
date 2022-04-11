@@ -57,7 +57,7 @@ public class ProxyAsClient {
             }
             case mqtt: {
                 //La connessione col Broker viene stabilita in fase di configurazione
-                //La entry � quella definita per ricevere risposte;
+                //La entry è quella definita per ricevere risposte;
                 //ColorsOut.out(name+"  | ProxyAsClient connect MQTT entry=" + entry );
                 //conn = MqttConnection.getSupport();
                 break;
@@ -101,7 +101,7 @@ public class ProxyAsClient {
                     while (true) {
                         String msgStr = conn.receiveMsg();
                         IApplMessage msg = new ApplMessage(msgStr);
-                        //ColorsOut.out(name + " |  activateReceiver RECEIVES " + msg  );
+                        ColorsOut.out(name + " |  activateReceiver RECEIVES " + msg  );
                         QakActor22 a = Qak22Context.getActor(msg.msgReceiver());
                         if (a != null) Qak22Util.sendAMsg(msg);
                         else

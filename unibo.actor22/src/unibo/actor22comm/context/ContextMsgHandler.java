@@ -25,7 +25,7 @@ public class ContextMsgHandler extends ApplMsgHandler implements IApplMsgHandler
 
     @Override
     public void elaborate(IApplMessage msg, Interaction2021 conn) {
-        ColorsOut.out(name + " | elaborateee" + msg + " conn=" + conn, ColorsOut.GREEN);
+        ColorsOut.out(name + " | elaborateee " + msg + " conn=" + conn, ColorsOut.GREEN);
         //msg( MSGID, MSGTYPE, SENDER, RECEIVER, CONTENT, SEQNUM )
         if (msg.isRequest()) elabRequest(msg, conn);
         else elabNonRequest(msg, conn);

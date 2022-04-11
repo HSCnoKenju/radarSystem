@@ -5,10 +5,7 @@ import unibo.actor22.Qak22Util;
 import unibo.actor22comm.utils.ColorsOut;
 import unibo.actor22comm.utils.CommSystemConfig;
 import unibo.actor22comm.utils.CommUtils;
-import unibo.appl.ApplData;
-import unibo.appl.ControllerActor;
-import unibo.appl.LedActor;
-import unibo.appl.SonarActor;
+import unibo.appl.*;
 
 
 /*
@@ -41,6 +38,7 @@ public class RSActor22onPC {
 
         new LedActor(ApplData.ledName);
         new SonarActor(ApplData.sonarName);
+        new RadarActor(ApplData.radarName);
         new ControllerActor(ApplData.controllerName);
 
 
