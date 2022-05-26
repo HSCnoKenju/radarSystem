@@ -72,13 +72,13 @@ public class RadarSysSprint2ControllerOnRaspMain implements IApplication{
 	    	System.out.println(n); 
 	    	terminate(); 
 	    };
-		int d = radar.getCurrentDistance();
+		int d = radar.getCurDistance();
 		ColorsOut.outappl(getName() + " | CURRENT DISTANCE answer=" + d,ColorsOut.MAGENTA );
 		controller.start(endFun, 30);		
 	}
 	public void terminate() {
 		//Utils.delay(1000);  //For the testing ...
-		int d = radar.getCurrentDistance();
+		int d = radar.getCurDistance();
 		ColorsOut.outappl(getName() + " |CURRENT DISTANCE answer=" + d,ColorsOut.MAGENTA );		
 		sonar.deactivate();
 		System.exit(0);

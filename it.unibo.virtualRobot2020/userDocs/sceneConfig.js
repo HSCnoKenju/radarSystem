@@ -57,7 +57,7 @@ const config = {
         {
             name: "wallUp",
             centerPosition: { x: 0.44, y: 0.97},
-            size: { x: 0.88, y: 0.01}
+            size: { x: 1, y: 0.03}
         },
         {
             name: "wallDown",

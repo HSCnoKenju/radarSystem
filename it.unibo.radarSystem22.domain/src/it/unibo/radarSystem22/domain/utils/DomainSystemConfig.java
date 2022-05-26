@@ -19,6 +19,8 @@ public class DomainSystemConfig {
 	public static boolean sonarObservable = false;
 	public static int DLIMIT = 15;
 	public static int testingDistance = DLIMIT - 2;
+	
+	public static int sonarObserverSensibility = 5;
 
 	public static boolean tracing = false;
 	public static boolean testing = false;
@@ -54,6 +56,7 @@ public class DomainSystemConfig {
 				tracing = object.getBoolean("tracing");
 				testing = object.getBoolean("testing");
 				ledGui = object.getBoolean("ledGui");
+				sonarObserverSensibility = object.getInt("sonarObserverSensibility");
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

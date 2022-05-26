@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <!--
+<link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
+<script type="text/javascript" src="../css/issStyle.js"></script>
+-->
+<style type="text/css">
+
+
+
+body
+{
+    margin-left:  30px;
+    margin-right: 30px;
+};
+
+P
+{
+    font-family: Tahoma;
+    font-size: 10pt;
+};
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+	font-size: 93%;
+}
+
+a:hover {
+    background-color: #cccccc;
+}
+
+
+hr {
+    clear: both;
+    height: 1px;
+    color: #242424;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: #242424;
+    clear: left;
+    font: 100% Tahoma, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+top {
+	width: 100%;
+}
+
+
+#i {
+    color: #ff1010;
+}
+tt{
+	font-family: "Arial";
+    font-size: 90%;
+	color: #006600;
+}
+em{
+	font-family: "Arial";
+    font-size: 80%;
+	font-weight: bold;
+	border-style:solid;
+	border-color: #abe876;
+    color: #1632cc;
+}
+bc{
+	font-family: "Arial";
+	font-size: 90%;
+	font-weight: bold;
+    color: #990000;
+	background-color: #fcf8c7;
+}
+ks{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+	font-size: 90%;
+}
+kc{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #008000	;
+	font-size: 90%;
+}
+pre{
+	font-family: "Consolas";
+	font-size: 85%;
+	background-color: #f5f5f5;
+	border: 1.5px solid silver;
+	padding: 5px;
+}
+m{
+	font-family: "Helvetica";
+	line-height: 100%;
+ 	font-size: 75%;
+}
+div.body{
+	 
+    font-size: 18px;
+}
+k{
+    color: #990000;
+	font-weight: bold;
+	font-size: 90%;
+}
+h1 {
+    font-size: 150%;
+    background-color: #b2c0ff;
+	padding: 10px;
+}
+
+h2 {
+    background-color: #9ed8ff;
+    font-size: 130%;
+}
+
+h3 {
+	background-color: #e6ccff;
+    font-size: 100%;
+}
+h4 {
+    background-color: #ccffcc;
+    font-size: 100%;
+	width: 95%;
+	border-radius: 5px;
+	padding: 2px;
+}
+h5 {
+    background-color: #d5ffb0;
+    font-size: 100%;
+
+}
+div.req{
+	background-color: #d9ffb3;
+    font-size: 18px;
+	width: 700px;
+    border: 3px solid green;
+    padding: 15px;
+    margin: 10px;
+}
+div.remark{
+	background-color: #E3F2FD;
+    border: 1.5px solid #d5f2ed;
+    padding: 15px;
+    margin: 10px;
+	border-radius: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+ol, ul, li {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+img {
+	border: 1.5px solid #d5f2ed
+
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #f5aa08;
+    background-color: transparent;
+}
+
+div.wrapdesc{
+	width: 90%;
+	margin: auto;
+}
+
+div.imagedesc{
+	width: 85%;
+	margin: auto;
+}
+
+
+.blue {
+
+    color : blue;
+    
+}
+
+.green {
+
+
+    color: green;
+}
+
+.container {
+  display: flex; /* or inline-flex */
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+</style>
+    
+<head>
+   
+<title>Robot Cleaner</title></head>
+    
+<body>
+<div id="top">
+<h1>LABORATORIO DI INGEGNERIA DEI SISTEMI SOFTWARE <font size="5"></font> </h1>
+</div>  
+
+<div class="body"> 
+<h2>Introduction</h2>
+Muovere il VirtualRobot in modo da coprire tutta la superficie di una stanza vuota.
+ 
+<h2>Requirements</h2>
+
+ 
+<div class="remark">
+    
+<ul>
+
+    <li> (requisito <span class="blue">observable</span>) il SonarObservable deve inviare informazioni a <b> tutti </b> i componenti software interessati alla rilevazione dei valori di distanza;
+    </li>
+    <li> (requisito <span class="blue">sensibility</span>) il SonarObservable deve fornire valori di distanza solo quando questi si <b>modificano in modo significativo</b>.
+    </li>    
+    
+    <li> (requisito <span class="blue">distributed</span>)
+    i componenti interessati ai valori di distanza prodotti dal SonarObservable sono denominati <b>Observer</b> e possono risiedere sullo stesso nodo (<b>locale</b>) del SonarObservable (cioè sul RaspberryPi) o su un nodo <b>remoto</b> (ad esempio sul PC);
+    
+</li>
+
+<li> (requisito <span class="blue">testing</span>) il funzionamento del SonarObservable deve essere <b>testato</b> in modo <b>automatizzato</b> ponendo un ostacolo a distanza fissa DTESTING1 davanti ad esso, controllando che tutti gli Observers ricevano il valore DTESTING1. Dopo un qualche tempo, si modifica la posizione dell’ostacolo a una nuova distanza DTESTING2 e si controlla che gli tutti gli Observers ricevano il valore DTESTING2.
+</li>
+</ul>
+   
+</div>
+
+ 
+
+<h2>Requirement analysis</h2>
+<div class="remark">
+ 
+<mark>definire/chiarire COSA (WHAT) il committente richiede e intende.</mark>
+
+<h5 class="blue"> observable</h5>
+
+<ul>
+    <li>
+        caso d'uso del pattern observer
+    </li>
+</ul>
+
+<h5 class="blue"> sensibility</h5>
+
+<ul>
+    <li>
+        specificare <b>modificare</b>, inteso come una modifica rispetto all'ultimo valore <b>rilevato</b> dal Sonar, oppure l'ultimo valore <b>inviato</b> ai observers
+    </li>
+    <li>
+        cosa significa in modo <b>significativo</b>, <b>chi</b> può decidere il valore di questo delta?<br> il delta è <b>fisso</b> oppure <b>variabile</b> durante l'esecuzione del componente SonarObservable?
+    </li>
+</ul>
+
+<h5 class="blue"> distributed</h5>
+
+<ul>
+    <li>
+        Posso fare assunzioni di comunità tra le diverse macchine nel sistema (Es. stesso SO, stesso linguaggio di programmazione, solo certi protocolli di comunicazione supportati) oppure devo considerare un caso generico 
+    </li>
+    <li>
+        Ho già disponibile librerie di comunicazione?
+    </li>
+</ul>
+
+
+<h5 class="blue"> testing</h5>
+
+<ul>
+    <li>
+        definisce il piano di testing
+    </li>
+</ul>
+</div>
+
+
+
+<h2>Problem analysis</h2>
+<div class="remark">
+<p><mark>definire/chiarire le problematiche implicate dai requisiti.</mark></p>
+<p><mark>fornire informazioni utili sui costi/tempi/risorse necessari.</mark></p>
+
+<h5 class="blue"> observable</h5>
+
+<p>La transizione ad un Sonar osservabile prospettata in Il pattern observer può essere affrontata pensando il SonarObservable in due modi</p>
+
+<ul>
+    <li>
+        <span class="green">modo_1</span> : osservo le <b>proprietà fisiche</b> del Sonar
+    </li>
+
+    <li>
+       <span class="green">modo_2</span> : osservo i valori prodotti dalla <b>misurazione</b> del Sonar
+    </li>
+</ul>
+
+<p>Decido di adottare <span class="green">modo_2</span> perchè nei requisiti viene citato solo la proprietà distanza come proprietà interessante; nessun requisito accenna alla necessità di tracciare anche le proprietà fisiche del sonar, quindi le ritengo non importanti</p>
+
+<h5 class="blue"> sensibility</h5>
+
+<p>Il delta è configurabile dall'utente prima dell'avvio del sistema, e rimane fisso durante l'esecuzione del programma. Quindi gli Observer non hanno possibilità di dichiarare la propria sensibilità di variazione per la quale vengono notificati degli aggiornamenti.</p>
+
+
+<div class="container">
+
+    <pre><code>
+
+        public interface IxxxObservable {
+    
+            public void subscribe(IxxxObserver o);
+    
+            public void unsubscribe(IxxxObserver o);
+            
+            public void setValue(IDistance distance);
+        }
+    
+    </code></pre>
+    
+    <pre><code>
+    
+        public interface IxxxObserver {
+    
+            public void update (IDistance distance);
+    
+            public int getValue();
+        }
+    </code></pre>
+</div> <!-- flex container-->
+
+<h3> Architettura logica</h3>
+
+<p>Architettura observer</p>
+
+<a href="img/architettura_observer.jpg">
+    <img src="img/architettura_observer.jpg" width="80%" alt="architettura_observer"></a>
+    <p>Architettura contesto</p>
+    
+    <a href="img/architettura_contesto.jpg">
+<img src="img/architettura_contesto.jpg" width="80%" alt="architettura_contesto">
+</a>
+</div>
+
+
+<h2>Test plans</h2> 
+
+
+<h2>Project</h2> 
+ 
+</div>
+
+<h2>Testing</h2> 
+ 
+
+<h2>Deployment</h2> 
+
+ 
+<h2>Maintenance</h2> 
+ 
+<!-- USEFUL
+<table style="width:100%" border="1">
+<tr>
+<td style="width:50%">
+</td>
+<td></td>
+</tr>
+</table>
+-->
+	      	
+<br/><br/> 	
+</div>  
+<div style="background-color:rgba(86, 56, 253, 0.9); width:60%;text-align:left;color:white">
+    <b>By Antonio Hu email: antonio.hu@studio.unibo.it  </b>
+    <br>
+    
+    <b>github repository:  <a href="https://github.com/HSCnoKenju/radarSystem">https://github.com/HSCnoKenju/radarSystem</a>  </b>
+
+    <img src="img/selfie.jpeg" alt="mbot" width="20%" height="20%">
+    </div>
+    
+</body>
+</html>

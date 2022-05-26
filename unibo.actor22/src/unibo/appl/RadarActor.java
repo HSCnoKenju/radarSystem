@@ -42,7 +42,7 @@ public class RadarActor extends QakActor22 {
 
         switch (msgReq) {
             case ApplData.reqDisplayCurrent: {
-                int i = display.getCurrentDistance();
+                int i = display.getCurDistance();
                 IApplMessage reply = MsgUtil.buildReply(getName(), ApplData.reqDisplayCurrent, "" + i, msg.msgSender());
                 ColorsOut.out(getName() + " | reply= " + reply, ColorsOut.CYAN);
                 sendReply(msg, reply);

@@ -2,7 +2,7 @@ package it.unibo.radarSystem22_4.appl.proxy;
 
 import it.unibo.radarSystem22.domain.interfaces.IDistance;
 import it.unibo.radarSystem22.domain.interfaces.ISonar;
-import it.unibo.radarSystem22.domain.model.Distance;
+import it.unibo.radarSystem22.domain.Distance;
 import it.unibo.radarSystem22.domain.utils.ColorsOut;
 import it.unibo.radarSystem22_4.comm.ApplMessage;
 import it.unibo.radarSystem22_4.comm.ProtocolType;
